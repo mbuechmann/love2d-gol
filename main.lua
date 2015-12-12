@@ -33,3 +33,9 @@ end
 function love.update(dt)
   pop.evolve()
 end
+
+function love.keypressed(key)
+  if key == "escape" then
+    love.event.quit()
+  end
+end
