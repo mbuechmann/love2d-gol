@@ -1,17 +1,22 @@
 local p = {}
 
-local function countNeighbours(cells, x, y)
-  local count = 0
-
-  for dx = x - 1, x + 1 do
-    for dy = y - 1, y + 1 do
-      if cells[dx] and cells[dx][dy] and (dx ~= x or dy ~= y) then
-        count = count + 1
-      end
-    end
+local function valueAt(cells, x, y)
+  if cells[x] and cells[x][y] then
+    return 1
   end
 
-  return count
+  return 0
+end
+
+local function countNeighbours(cells, x, y)
+  return  valueAt(cells, x - 1, y - 1) +
+          valueAt(cells, x, y - 1) +
+          valueAt(cells, x + 1, y - 1) +
+          valueAt(cells, x - 1, y) +
+          valueAt(cells, x + 1, y) +
+          valueAt(cells, x - 1, y + 1) +
+          valueAt(cells, x, y + 1) +
+          valueAt(cells, x + 1, y + 1)
 end
 
 function p.build(size)
