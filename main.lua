@@ -1,11 +1,11 @@
-population = require "population"
+Population = require "population"
 renderer = require "renderer"
 
 function love.load()
   SIZE = 300
   FACTOR = 2
 
-  pop = population.build(SIZE)
+  pop = Population:new(nil, SIZE)
 
   love.window.setMode(SIZE * FACTOR, SIZE * FACTOR)
 end
@@ -16,7 +16,7 @@ function love.draw()
 end
 
 function love.update(dt)
-  pop.evolve()
+  pop:evolve()
 end
 
 function love.keypressed(key)
