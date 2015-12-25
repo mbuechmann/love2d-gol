@@ -1,11 +1,17 @@
-local Population = { cells = {}, nextCells = {}, neighbourCounts = {} }
+local Population = {}
 
-function Population:new(o, size)
-  o = o or {}
+function Population:new(size)
+  o = {}
   setmetatable(o, self)
   self.__index = self
+
   self.size = size or 100
+  self.cells = {}
+  self.nextCells = {}
+  self.neighbourCounts = {}
+
   self:initCells(self.cells, self.nextCells, self.size)
+
   return o
 end
 

@@ -5,7 +5,7 @@ function love.load()
   SIZE = 300
   FACTOR = 2
 
-  pop = Population:new(nil, SIZE)
+  pop = Population:new(SIZE)
 
   love.window.setMode(SIZE * FACTOR, SIZE * FACTOR)
 end
