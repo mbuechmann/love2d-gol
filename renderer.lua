@@ -1,7 +1,7 @@
 local renderer = {}
 
-local function drawCell(x, y, alive)
-  if alive then
+local function drawCell(x, y, state)
+  if state == 1 then
     love.graphics.setColor(255, 255, 255)
   else
     love.graphics.setColor(0, 0, 0)
