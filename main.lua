@@ -1,8 +1,9 @@
 Population = require "population"
-renderer = require "renderer"
+local renderer = require "renderer"
+local pop
 
 function love.load()
-  SIZE = 300
+  SIZE = 500
   FACTOR = 2
 
   pop = Population:new(SIZE)
